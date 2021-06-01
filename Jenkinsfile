@@ -23,7 +23,7 @@ pipeline {
         }
 		stage ('Starting downstream job ') {
                 steps {
-                build job: 'Project 4.15 Project'
+                build job: '5.10 my-pipeline'
             }
         }		
     }
