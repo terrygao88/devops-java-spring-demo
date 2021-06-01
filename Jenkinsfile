@@ -12,7 +12,7 @@ pipeline {
     	}
     	stage('Build') {
         	steps {
-        	sh "mvn package"  	 
+        	sh "mvn build"  	 
         	}
     	}
    	 
@@ -21,9 +21,9 @@ pipeline {
             	sh "mvn test"          	 
        	    }
         }
-		stage ('Starting downstream job ') {
+        stage ('Package') {
                 steps {
-                build job: '5.10 my-pipeline'
+                sh "mvn package"
             }
         }		
     }
